@@ -1,0 +1,97 @@
+<!-- For older browsers -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Defines the character set in use -->
+        <meta charset="UTF-8">
+        <!-- Defines default page scaling for responsive web design -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Decide what version of IE the page is rendered through -->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Page title -->
+        <title>The Baking Index | Add</title>
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="../public/assets/styles.css">
+        <!-- JS Script -->
+        <script src="../script.js"></script>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <!-- Icons -->
+        <script src="https://kit.fontawesome.com/ba3b736cb2.js" crossorigin="anonymous"></script>
+        <!-- Favicon Config -->
+        <link rel="apple-touch-icon" sizes="180x180" href="../public/assets/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../public/assets/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../public/assets/favicon-16x16.png">
+        <link rel="manifest" href="../public/assets/site.webmanifest">
+        <link rel="mask-icon" href="../public/assets/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../public/assets/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="../public/assets/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body>
+        <!-- Header section -->
+        <header class="header_main">
+            <!-- Top Bar -->
+            <div class="header_navbar_container">
+                <div class="header_nav_aligner">
+                    <a href="/home"><img src="../public/assets/logo.png" alt="Site Logo" class="header_nav_logo" /></a>
+                    <h1 class="header_nav_text">The Baking Index</h1>
+                    <button class="nav_burger_menu" onclick="MobileToggle()">
+                        <i class="fa-solid fa-bars" style="color: #000080;" id="Icon"></i>
+                    </button>
+                </div>
+                <div class="header_nav_links_container">
+                    <ul class="header_nav_links_ul">
+                        <li class="header_nav_links_li"><a class="header_nav_links_a" href="/">Home</a></li>
+                        <li class="header_nav_links_li"><a class="header_nav_links_a" href="/recipes">Recipes</a></li>
+                        <li class="header_nav_links_li"><a class="header_nav_links_a active" href="/add/login">Add</a></li>
+                        <li class="header_nav_links_li"><a class="header_nav_links_a" href="/about">About</a></li>
+                    </ul>
+                </div>
+                <div class="overlay_closed" id="Menu">
+                    <ul class="overlay_ul">
+                        <li class="overlay_li"><a class="overlay_a" href="/">Home</a></li>
+                        <li class="overlay_li"><a class="overlay_a" href="/recipes">Recipes</a></li>
+                        <li class="overlay_li"><a class="overlay_a active" href="/add/login">Add</a></li>
+                        <li class="overlay_li"><a class="overlay_a" href="/about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Main header body content -->
+            <div class="header_add_platform_container">
+                <a href="/myrecipes" class="add_form_skip_prompt">Skip to 'My Recipes'</a>
+                <form class="header_add_form" id="header_add_form" method="post" action="/add">
+                    <h1 class="add_title">Add New Recipe</h1>
+                    <img class="header_login_image" alt="The Baking Index Logo" src="../public/assets/favicon.png"/>
+                    <!-- New Recipe: Name -->
+                    <input type="text" class="add_textfield" placeholder="Recipe Name" name="add_name" required id="add_name"/>
+                    <!-- New Recipe: Difficulty -->
+                    <label for="add_difficulty_select">Difficulty:</label>
+                    <select id="add_difficulty_select" name="add_difficulty_select">
+                        <option value="Easy">Easy</option>
+                        <option value="Moderate">Moderate</option>
+                        <option value="Challenging">Challenging</option>
+                    </select>
+                    <!-- New Recipe: Ingredients List -->
+                    <textarea type="text" class="add_textfield_area" placeholder="Ingredients List" name="add_ingredients" required id="add_ingredients"></textarea>
+                    <div class="test_aligner">
+                        <!-- New Recipe: Step 1 -->
+                        <textarea type="text" class="add_textfield_area" placeholder="Step 1" name="add_step_1" required id="add_step_1"></textarea>
+                        <!-- New Recipe: Step 2 -->
+                        <textarea type="text" class="add_textfield_area" placeholder="Step 2" name="add_step_2" id="add_step_2"></textarea>
+                        <!-- New Recipe: Step 3 -->
+                        <textarea type="text" class="add_textfield_area" placeholder="Step 3" name="add_step_3" id="add_step_3"></textarea>
+                        <!-- New Recipe: Step 4 -->
+                        <textarea type="text" class="add_textfield_area" placeholder="Step 4" name="add_step_4" id="add_step_4"></textarea>
+                        <!-- New Recipe: Step 5 -->
+                        <textarea type="text" class="add_textfield_area" placeholder="Step 5" name="add_step_5" id="add_step_5"></textarea>
+                    </div>
+                    <button type="submit" class="header_search_submit" id="header_search_submit">Add</button>
+                </form>
+            </div>
+        </header>
+    </body>
+</html>

@@ -1,0 +1,1172 @@
+/* Animations */
+@keyframes SlideInTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes SlideInBottom {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* CSS Variables & Default values */
+:root {
+    --title-text-weight: 300;
+    --title-text-size: 32px;
+    --title-text-spacing-word: 10px;
+    --title-text-spacing-letter: 2.5px;
+    --body-text-weight: 300;
+    --body-text-size: 26px;
+    --ingredients-text-size: 18px;
+    --search-text-size: 22px;
+    --image-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --image-box-shadow-hover: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    --active-weight: 500;
+    --active-color: #000080;
+    --active-color-hover: #0606d3;
+    --active-border: 2px solid #000080;
+    --background-overlay: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(./background.jpg);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Header Full VH */
+.header_main {
+    width: 100vw;
+    height: 100vh;
+    background: var(--background-overlay);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 600px) {
+    .header_main {
+    	min-height: 87vh;
+	}
+}
+
+/* Header Navigation Bar: Container  */
+.header_navbar_container {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    background-color: #fafafa;
+    box-shadow: var(--image-box-shadow);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .header_navbar_container {
+        justify-content: center;
+        padding: 0px;
+    }
+}
+
+/* Header Navigation Bar: Aligner */
+.header_nav_aligner {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    animation-name: SlideInTop;
+    animation-duration: 1s;
+}
+
+@media only screen and (min-width: 992px) {
+    .header_nav_aligner {
+        width: 30vw;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .header_nav_aligner {
+        width: 20vw;
+    }
+}
+
+/* Header Navigation Bar: Logo & Title */
+.header_nav_logo {
+    height: 6vh;
+    box-shadow: var(--image-box-shadow);
+    transition: all 0.5s ease-in-out;
+}
+
+.header_nav_logo:hover {
+    box-shadow: var(--image-box-shadow-hover);
+    cursor: pointer;
+}
+
+.header_nav_text {
+    font-weight: var(--title-text-weight);
+    font-size: var(--title-text-size);
+    letter-spacing: var(--title-text-spacing-letter);
+    word-spacing: var(--title-text-spacing-word);
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .header_nav_text {
+        width: 50vw;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .header_nav_text {
+        width: 25vw;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .header_nav_text {
+        width: 12vw;
+    }
+}
+
+/* Header Navigation Bar: UL, LI and As */
+.header_nav_links_ul {
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_nav_links_li {
+    display: inline;
+    margin-left: 50px;
+    height: 50px;
+}
+
+.header_nav_links_a {
+    text-decoration: none;
+    color: #000;
+    font-size: var(--body-text-size);
+    font-weight: var(--body-text-weight);
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s ease-in-out;
+}
+
+.header_nav_links_li a:hover {
+    border-bottom: var(--active-border);
+    color: var(--active-color);
+}
+
+.active {
+    font-weight: var(--active-weight);
+    border-bottom: var(--active-border);
+    color: var(--active-color);
+}
+
+/* HIDES DESKTOP NAVIGATION */
+@media only screen and (max-width: 991px) {
+    .header_nav_links_container {
+        display: none;
+    }
+}
+
+/* SHOWS DESKTOP NAVIGATION */
+@media only screen and (min-width: 992px) {
+    .header_nav_links_container {
+        height: 100%;
+        width: 50vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        animation-name: SlideInTop;
+        animation-duration: 1s;
+    }
+}
+
+/* Main Header Content: Container */
+.header_search_container {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main Header Content: Input */
+.header_search_input:focus {
+    outline: 0;
+    box-shadow: var(--image-box-shadow-hover);
+}
+
+@media only screen and (max-width: 1199px) {
+    .header_search_input {
+        width: 80%;
+        height: 40%;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: var(--search-text-size);
+        box-shadow: var(--image-box-shadow);
+        transition: all 0.5s ease-in-out;
+        animation-name: SlideInBottom;
+        animation-duration: 1s;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .header_search_input {
+        width: 40%;
+        height: 5vh;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: var(--search-text-size);
+        box-shadow: var(--image-box-shadow);
+        transition: all 0.5s ease-in-out;
+        animation-name: SlideInBottom;
+        animation-duration: 1s;
+    }
+}
+
+/* Main Header Content: Form */
+.header_search_form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Main Header Content: Tagline Text */
+.header_search_text {
+    font-size: var(--body-text-size);
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+}
+
+/* Main Header Content: Submit */
+.header_search_submit {
+    margin-top: 20px;
+    width: 300px;
+    height: 60px;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid #000;
+    box-shadow: var(--image-box-shadow);
+    transition: all 0.5s ease-in-out;
+    background: var(--active-color);
+    font-size: var(--search-text-size);
+    font-weight: var(--active-weight);
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+    color: #fff;
+}
+
+.header_search_submit:hover {
+    box-shadow: var(--image-box-shadow-hover);
+    cursor: pointer;
+    background: var(--active-color-hover);
+}
+
+/* Mobile Navigation: Visibility */
+@media only screen and (max-width: 767px) {
+    .nav_burger_menu {
+        width: 12vw;
+        height: 6vh;
+        background: none;
+        outline: 0;
+        border:0;
+        margin-left: 0px;
+        font-size: 46px;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .nav_burger_menu {
+        width: 8vw;
+        height: 50%;
+        font-size: 46px;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .nav_burger_menu {
+        display: none;    
+    }
+}
+
+/* Mobile Nav Overlay: State */
+.overlay_open {
+    width: 100vw;
+    height: 200px;
+    z-index: 1000;
+    position: absolute;
+    padding: 10px 0px;
+    top: 10vh;
+    left: 0;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+}
+
+@media only screen and (min-width: 992px) {
+    .overlay_open {
+        display: none;
+    }
+}
+
+.overlay_closed {
+    width: 0vw;
+    height: 0vh;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    background: #fafafa;
+}
+
+/* Mobile Nav Overlay: Ul, LIs and A's */
+.overlay_ul {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay_li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.overlay_a {
+    width: 100vw;
+    text-decoration: none;
+    color: #000;
+    font-size: var(--body-text-size);
+    font-weight: var(--body-text-weight);
+}
+
+.overlay_li a:hover {
+    border-bottom: var(--active-border);
+    color: var(--active-color);
+}
+
+/* 404 Page Formatting */
+.error404_safety_btn {
+    margin-top: 20px;
+    width: 300px;
+    height: 60px;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid #000;
+    box-shadow: var(--image-box-shadow);
+    transition: all 0.5s ease-in-out;
+    background: var(--active-color);
+    font-size: var(--search-text-size);
+    font-weight: var(--active-weight);
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+    color: #fff;
+}
+
+.error404_safety_btn:hover {
+    box-shadow: var(--image-box-shadow-hover);
+    cursor: pointer;
+    background: var(--active-color-hover);
+}
+
+.error404_safety_btn a {
+    color: #fff;
+    text-decoration: none;
+    font-size: var(--search-text-size);
+}
+
+.error404_safety_title {
+    font-weight: 300;
+    font-size: var(--title-text-size);
+    word-spacing: var(--title-text-spacing-word);
+    letter-spacing: var(--title-text-spacing-letter);
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+}
+
+.error404_safety_text {
+    font-weight: 500;
+    font-size: var(--search-text-size);
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+}
+
+/* About Page: Container */
+.about_container {
+    width: 90vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+}
+
+/* About Page: Title */
+.about_title {
+    margin-top: 25px;
+    font-size: var(--title-text-size);
+    font-weight: var(--title-text-weight);
+    letter-spacing: var(--title-text-spacing-letter);
+    word-spacing: var(--title-text-spacing-word);
+    height: 100px;
+    text-align: center;
+}
+
+.about_title::after {
+    content: "";
+    border-radius: 5px;
+    position: relative;
+    display: block;
+    width: 100px;
+    top: 15px;
+    left: 40%;
+    height: 5px;
+    background: var(--active-color);
+}
+
+/* Recipes Display Container */
+.recipes_display_container {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+    padding: 30px;
+}
+
+.header_search_container_recipes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+@media only screen and (max-width: 600px) {
+    .recipes_display_container {
+        width: 90vw;
+        height: auto;
+    }
+}
+
+.recipes_card_container {
+    width: 400px;
+    height: 400px;
+    box-shadow: var(--image-box-shadow);
+    transition: all 0.5s ease-in-out;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 25px 0px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .recipes_card_container {
+        margin: 25px 100px;
+    }
+}
+
+.recipes_card_container:hover {
+    box-shadow: var(--image-box-shadow-hover);
+}
+
+.recipe_info_container {
+    width: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+    position: relative;
+    padding: 30px 0px;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+@media only screen and (min-width: 1200px) {
+    .recipes_card_container:hover .recipe_info_container {
+        opacity: 1;
+    }
+    
+    .recipe_info_container {
+        width: 100%;
+        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+        position: relative;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+}
+
+
+
+.recipe_name {
+    font-size: 22px;
+    font-weight: var(--title-text-weight);
+    letter-spacing: var(--title-text-spacing-letter);
+    word-spacing: var(--title-text-spacing-word);
+    text-align: center;
+}
+
+.recipe_difficulty {
+    font-size: var(--search-text-size);
+    font-weight: var(--body-text-weight);
+    text-align: center;
+}
+
+.recipe_button {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid #000;
+    box-shadow: var(--image-box-shadow);
+    transition: all 0.5s ease-in-out;
+    background: var(--active-color);
+    font-size: var(--search-text-size);
+    font-weight: var(--active-weight);
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+    color: #fff;
+    display: block;
+    margin-top: 20px;
+}
+
+.recipe_button:hover {
+    box-shadow: var(--image-box-shadow-hover);
+    cursor: pointer;
+    background: var(--active-color-hover);
+}
+
+.recipe_button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Recipe Page */
+.recipe_page_container {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+    margin: 30px;
+    background: black;
+    color: blue;
+}
+
+@media only screen and (max-width: 600px) {
+    .recipe_page_container {
+        width: 90vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        animation-name: SlideInBottom;
+        animation-duration: 1s;
+        background: orange;
+        margin: 0px;
+    }
+}
+
+@media only screen and (max-width: 1499px) {
+    .recipe_page_container {
+        width: 90vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        animation-name: SlideInBottom;
+        animation-duration: 1s;
+        background: green;
+        margin: 0px;
+    }
+}
+
+.recipe_page_title {
+    font-size: var(--title-text-size);
+    font-weight: var(--title-text-weight);
+    letter-spacing: var(--title-text-spacing-letter);
+    word-spacing: var(--title-text-spacing-word);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.recipe_page_image {
+    width: 600px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.recipe_subheading {
+    margin: 20px 0px 10px 0px;
+    width: 600px;
+    text-align: left;
+    font-size: var(--title-text-size);
+    font-weight: var(--active-weight);
+}
+
+@media only screen and (max-width: 750px) {
+    .recipe_subheading {
+        margin: 20px 0px 10px 0px;
+        text-align: center;
+        width: 100%;
+        font-size: var(--title-text-size);
+        font-weight: var(--active-weight);
+    }
+}
+
+.recipe_subheading_method {
+    margin: 20px 0px 10px 0px;
+    width: 600px;
+    text-align: left;
+    font-size: var(--title-text-size);
+    font-weight: var(--active-weight);
+}
+
+@media only screen and (max-width: 750px) {
+    .recipe_subheading_method {
+        margin-top: 20px 0px 10px 0px;
+        width: 100%;
+        text-align: center;
+        font-size: var(--title-text-size);
+        font-weight: var(--active-weight);
+    }
+}
+
+.recipe_ingredients_content {
+    width: 600px;
+    font-size: var(--ingredients-text-size);
+}
+
+.recipe_method_container {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+    margin: 30px;
+}
+
+@media only screen and (max-width: 700px) {
+    .recipe_method_container h1, p, h2, strong {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1499px) {
+    .recipe_method_container {
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        animation-name: SlideInBottom;
+        animation-duration: 1s;
+        margin: 0px;
+    }
+}
+
+.header_recipe_result_container {
+    width: 90vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1499px) {
+    .header_recipe_result_container {
+        width: 100vw;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        scrollbar-gutter: stable;
+    }
+}
+
+.recipe_methods_content {
+    width: 600px;
+    text-align: left;
+    font-size: var(--ingredients-text-size);
+}
+
+@media only screen and (max-width: 750px) {
+    .recipe_methods_content {
+        text-align: center;
+        width: 100%;
+        font-size: var(--ingredients-text-size);
+    }
+}
+
+/* Recipe Search Results */
+.recipes_search_display_container {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+    padding: 30px 30px 0px 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .recipes_search_display_container {
+        width: 90vw;
+    }
+}
+
+.search_results_display_box {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+    padding: 0px 30px 30px 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .search_results_display_box {
+        width: 90vw;
+        height: auto;
+    }
+}
+
+.recipe_search_tagline {
+    font-size: var(--title-text-size);
+    font-weight: var(--title-text-weight);
+    letter-spacing: var(--title-text-spacing-letter);
+    word-spacing: var(--title-text-spacing-word);
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 1199px) {
+    .recipe_search_tagline {
+        width: 80%;
+        height: 40%;
+        padding: 20px;
+        font-size: var(--search-text-size);
+        box-shadow: var(--image-box-shadow);
+        transition: all 0.5s ease-in-out;
+        animation-name: SlideInBottom;
+        animation-duration: 1s;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .recipe_search_tagline {
+        width: 54%;
+        height: 5vh;
+    }
+}
+
+.header_search_again_form {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.header_search_again_submit {
+    margin-left: 20px;
+    width: 300px;
+    height: 60px;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid #000;
+    box-shadow: var(--image-box-shadow);
+    transition: all 0.5s ease-in-out;
+    background: var(--active-color);
+    font-size: var(--search-text-size);
+    font-weight: var(--active-weight);
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+    color: #fff;
+}
+
+.header_search_again_submit:hover {
+    box-shadow: var(--image-box-shadow-hover);
+    cursor: pointer;
+    background: var(--active-color-hover);
+}
+
+.search_results_failure {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.search_results_failure h1 {
+    font-size: var(--title-text-size);
+    font-weight: var(--title-text-weight);
+    letter-spacing: var(--title-text-spacing-letter);
+    word-spacing: var(--title-text-spacing-word);
+}
+
+/* OPTIONAL: Login Structure: Login Page */
+.header_login_form {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.header_login_image {
+    width: 150px;
+    margin-top: 10px;
+    animation-name: SlideInTop;
+    animation-duration: 1s;
+}
+
+.header_login_input:focus {
+    outline: 0;
+    box-shadow: var(--image-box-shadow-hover);
+}
+
+@media only screen and (max-width: 1199px) {
+    .header_login_input {
+        width: 80%;
+        height: 5vh;
+        margin-top: 20px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: var(--search-text-size);
+        box-shadow: var(--image-box-shadow);
+        transition: all 0.5s ease-in-out;
+        animation-name: SlideInBottom;
+        animation-duration: 1s;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .header_login_input {
+        width: 15%;
+        height: 5vh;
+        margin-top: 20px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: var(--search-text-size);
+        box-shadow: var(--image-box-shadow);
+        transition: all 0.5s ease-in-out;
+        animation-name: SlideInBottom;
+        animation-duration: 1s;
+    }
+}
+
+.login_title {
+    font-size: var(--title-text-size);
+    font-weight: var(--title-text-weight);
+    letter-spacing: var(--title-text-spacing-letter);
+    word-spacing: var(--title-text-spacing-word);
+    height: 80px;
+    text-align: center;
+    animation-name: SlideInTop;
+    animation-duration: 1s;
+}
+
+.login_title::after {
+    content: "";
+    border-radius: 5px;
+    position: relative;
+    display: block;
+    width: 100px;
+    top: 15px;
+    left: 00%;
+    height: 5px;
+    background: var(--active-color);
+}
+
+.error_message {
+    color: darkred;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 24px;
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+}
+
+/* Signup: Total */
+.Signup_prompt {
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--active-color);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s ease-in-out;
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+}
+
+.Signup_prompt:hover {
+    border-bottom: 2px solid var(--active-color);
+}
+
+/* Add Home Platform Page */
+.header_add_platform_container {
+    width: 100vw;
+    margin-bottom: 3vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+}
+
+.header_add_form {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.add_title {
+    font-size: var(--title-text-size);
+    font-weight: var(--title-text-weight);
+    letter-spacing: var(--title-text-spacing-letter);
+    word-spacing: var(--title-text-spacing-word);
+    text-align: center;
+    height: 50px;
+    margin: 20px 0px;
+    animation-name: SlideInTop;
+    animation-duration: 1s;
+    border-bottom: 2px solid var(--active-color);
+}
+
+.add_textfield:focus {
+    outline: 0;
+    box-shadow: var(--image-box-shadow-hover);
+}
+
+@media only screen and (max-width: 1199px) {
+    .add_textfield {
+        width: 80%;
+        height: 5vh;
+        margin: 20px 0px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: var(--search-text-size);
+        box-shadow: var(--image-box-shadow);
+        transition: all 0.5s ease-in-out;
+        animation-name: SlideInBottom;
+        animation-duration: 1s;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .add_textfield {
+        width: 15%;
+        height: 5vh;
+        margin: 20px 0px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: var(--search-text-size);
+        box-shadow: var(--image-box-shadow);
+        transition: all 0.5s ease-in-out;
+        animation-name: SlideInBottom;
+        animation-duration: 1s;
+    }
+}
+
+.header_add_form label {
+    font-size: 18px;
+    overflow: hidden;
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+}
+
+.header_add_form select {
+    margin-top: 5px;
+    width: 15%;
+    font-size: var(--search-text-size);
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+}
+
+@media only screen and (max-width: 1199px) {
+    .add_textfield_area {
+        width: 80%;
+        height: 100px;
+        margin: 20px 0px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: var(--search-text-size);
+        box-shadow: var(--image-box-shadow);
+        transition: all 0.5s ease-in-out;
+        animation-name: SlideInBottom;
+        animation-duration: 1s;
+        resize: none;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .add_textfield_area {
+        width: 15%;
+        height: 100px;
+        margin: 20px 0px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: var(--search-text-size);
+        box-shadow: var(--image-box-shadow);
+        transition: all 0.5s ease-in-out;
+        animation-name: SlideInBottom;
+        animation-duration: 1s;
+        resize: none;
+    }
+}
+
+.add_textfield_area:focus {
+    outline: 0;
+    box-shadow: var(--image-box-shadow-hover);
+}
+
+.test_aligner {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 1999px) {
+    .test_aligner {
+        width: 80%;
+        height: 820px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
+.add_form_skip_prompt {
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--active-color);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s ease-in-out;
+    animation-name: SlideInBottom;
+    animation-duration: 1s;
+}
+
+.add_form_skip_prompt:hover {
+    border-bottom: 2px solid var(--active-color);
+}
+
+/* About Text */
+.about_text {
+    width: 100%;
+    text-align: center;
+    font-size: var(--body-text-size);
+    font-weight: var(--body-text-weight);
+    margin-bottom: 10px;
+}
+
+.header_about_container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about_image {
+    width: 500px;
+    margin-bottom: 25px;
+}

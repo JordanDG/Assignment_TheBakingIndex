@@ -1,0 +1,71 @@
+<!-- For older browsers -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Defines the character set in use -->
+        <meta charset="UTF-8">
+        <!-- Defines default page scaling for responsive web design -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Decide what version of IE the page is rendered through -->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Page title -->
+        <title>The Baking Index | Page Not Found</title>
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="../public/assets/styles.css">
+        <!-- JS Script -->
+        <script src="../script.js"></script>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <!-- Icons -->
+        <script src="https://kit.fontawesome.com/ba3b736cb2.js" crossorigin="anonymous"></script>
+        <!-- Favicon Config -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+        <link rel="manifest" href="/assets/site.webmanifest">
+        <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/assets/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="/assets/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body>
+        <!-- Header section -->
+        <header class="header_main">
+            <!-- Top Bar -->
+            <div class="header_navbar_container">
+                <div class="header_nav_aligner">
+                    <a href="/home"><img src="../public/assets/logo.png" alt="Site Logo" class="header_nav_logo" /></a>
+                    <h1 class="header_nav_text">The Baking Index</h1>
+                    <button class="nav_burger_menu" onclick="MobileToggle()">
+                        <i class="fa-solid fa-bars" style="color: #000080;" id="Icon"></i>
+                    </button>
+                </div>
+                <div class="header_nav_links_container">
+                    <ul class="header_nav_links_ul">
+                        <li class="header_nav_links_li"><a class="header_nav_links_a" href=/home>Home</a></li>
+                        <li class="header_nav_links_li"><a class="header_nav_links_a" href=/recipes>Recipes</a></li>
+                        <li class="header_nav_links_li"><a class="header_nav_links_a" href=/add/login>Add</a></li>
+                        <li class="header_nav_links_li"><a class="header_nav_links_a" href=/about>About</a></li>
+                    </ul>
+                </div>
+                <div class="overlay_closed" id="Menu">
+                    <ul class="overlay_ul">
+                        <li class="overlay_li"><a class="overlay_a" href=/home>Home</a></li>
+                        <li class="overlay_li"><a class="overlay_a" href=/recipes>Recipes</a></li>
+                        <li class="overlay_li"><a class="overlay_a" href=/add/login>Add</a></li>
+                        <li class="overlay_li"><a class="overlay_a" href=/about>About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Main header body content -->
+            <div class="header_search_container">
+                <h1 class="error404_safety_title">Error 404: Page Not Found</h1>
+                <p class="error404_safety_text">Not sure how you got here... you should go.</p>
+                <button class="error404_safety_btn"><a href="/">Return To Safety</a></button>
+            </div>
+        </header>
+    </body>
+</html>
